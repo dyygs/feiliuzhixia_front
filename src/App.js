@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import $ from 'jquery';
+import Book from './ManageBook';
 
 class App extends Component {
 
@@ -14,15 +15,6 @@ class App extends Component {
     }
 
     getCitys() {
-        // console.log(this.state.provinceName);
-        // $.get('http://192.168.6.202:8080/city/getCity?provinceName=%E6%B2%B3%E5%8D%97%E7%9C%81', function(result) {
-        //     if (this.isMounted) {
-        //         this.setState({
-        //             provinceName: this.state.provinceName,
-        //             citys: result[0].data
-        //         });
-        //     }
-        // }.bind(this));
         const _this = this;
         $.ajax({
             type:'get',
@@ -64,16 +56,10 @@ class App extends Component {
                         })
                     }
                 </ul>
+                <Book/>
             </div>
         );
     }
-}
-
-var city = {
-    id: '',
-    cityName: '',
-    cityId: '',
-    provinceId: ''
 }
 
 export default App;
